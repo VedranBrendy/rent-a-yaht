@@ -3,6 +3,7 @@
   --secondary-color: #0a79df;
   --light-color: #009ee3;
   --dark-color: #192a56;
+  --grey-color: #555;
   --max-width: 1100px;
 }
 
@@ -18,14 +19,11 @@ body {
   overflow-x: hidden;
 }
 
-/* ---- Utility ---- */
 .container {
   max-width: var(--max-width);
   margin: auto;
   overflow: hidden;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 ul {
@@ -46,7 +44,6 @@ a {
 
 .btn:hover {
   background: var(--light-color);
-  color: #000;
 }
 
 .btn-primary {
@@ -70,7 +67,7 @@ a {
   display: block;
   margin: 0 auto 1rem auto;
 }
-.title {
+.hr-dark {
   height: 2px;
   width: 20rem;
   background: #000;
@@ -80,11 +77,24 @@ a {
 
 /* ---- Main Nav ---- */
 #main-nav {
-  height: 64px;
   background: var(--primary-color);
 }
-#main-nav ul {
-  display: flex;
+#main-nav .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#main-nav .container .social {
+  justify-self: center;
+  display: flex; /* Side by side aligning */
+  align-items: center;
+  justify-content: center;
+}
+#main-nav .container ul {
+  justify-self: flex-end;
+  display: flex; /* Side by side aligning */
+  align-items: center;
+  justify-content: center;
 }
 
 #main-nav ul a {
@@ -92,7 +102,7 @@ a {
 }
 
 #main-nav .social i {
-  padding: 0.2rem;
+  padding-right: 1rem;
 }
 
 #main-nav ul li a {
@@ -103,20 +113,12 @@ a {
   background: var(--dark-color);
   color: #fff;
 }
-
+/* Saection:Full video */
 .v-header {
   height: calc(100vh - 64px);
   display: flex;
   align-items: center;
   color: #fff;
-}
-
-.container {
-  max-width: 960px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin: auto;
-  text-align: center;
 }
 
 .fullscreen-video-wrap {
@@ -145,26 +147,36 @@ a {
 }
 
 .header-content {
+  display: grid;
+  grid-template-columns: auto;
   z-index: 2;
+  margin: auto;
 }
 
 .header-content h1 {
-  font-size: 50px;
+  font-size: 4rem;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .header-content p {
   font-size: 1.5rem;
-  display: block;
+
   padding-bottom: 2rem;
+  text-align: center;
 }
 
-#showcase {
-  height: calc(100vh + 64px);
-  background: url('../img/bg.jpg') no-repeat center center/cover;
+.header-content .btn {
+  margin: auto;
 }
+/* Showcase */
+#showcase {
+  padding-bottom: 3rem;
+  background: url('img/bg.jpg') no-repeat;
+}
+
 #showcase h1 {
-  padding: 100px 0;
+  padding: 5rem 0 2rem 0;
   font-size: 3rem;
   text-align: center;
   color: #fff;
@@ -173,21 +185,18 @@ a {
 #showcase h1 span {
   color: var(--secondary-color);
 }
-
-#showcase .btn-primary {
-  text-align: center;
-  width: 10%;
-  margin-left: 45%;
-  margin-right: 45%;
+#showcase .showcase-container .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
 }
+
 /* Cards */
 .card {
-  margin-right: 1rem;
   width: 350px;
-  background: var(--dark-color);
+  z-index: 1;
   color: #fff;
   text-align: center;
-  height: 650px;
   z-index: 1;
 }
 
@@ -196,17 +205,27 @@ a {
   height: 250px;
 }
 
+.card .card-content {
+  background: var(--grey-color);
+  opacity: 0.6;
+  padding-bottom: 2rem;
+  z-index: 1;
+}
+
 .card h2 {
   padding: 15px 0;
+  z-index: 3;
 }
 
 .card p {
   padding: 10px;
+  z-index: 3;
 }
 .card .boat-price {
   margin-bottom: 20px;
   font-size: 1.1rem;
 }
+
 /* Show Boat Section */
 #boat-section {
   background: #333;
@@ -240,10 +259,14 @@ a {
   text-align: center;
 }
 #boat-section .description-1 .description-list li {
-  margin-left: 5rem;
+  justify-content: center;
+  margin: auto;
+  width: 60%;
 }
 #boat-section .description-2 .description-list li {
-  margin-left: 1rem;
+  justify-content: center;
+  margin: auto;
+  width: 60%;
 }
 
 #boat-section .description-1 .description-list li,
@@ -269,13 +292,13 @@ a {
 /* FOOTER */
 #footer {
   color: #fff;
-  background: var(--light-color);
-  height: auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 0 500px;
+  background: var(--dark-color);
 }
 
+#footer .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 #footer .ul-heading {
   letter-spacing: 1px;
   font-weight: bold;
@@ -286,18 +309,16 @@ a {
 #footer .footer-list {
   display: grid;
   text-align: center;
-  align-items: center;
+  margin: auto;
 }
-/* #footer .footer-list a {
-  padding: 0.9rem 0;
-} */
 
 #footer .newsletter {
   display: grid;
-  background: var(--dark-color);
+  background: var(--primary-color);
   grid-column: 1 / span 4;
+  width: 50%;
   padding: 2rem;
-  margin: 2rem;
+  margin: 5rem auto;
   text-align: center;
 }
 #footer .newsletter form input[type='email'] {
@@ -305,10 +326,11 @@ a {
   width: 60%;
   border: none;
   padding-left: 0.5rem;
+  font-size: 1.2rem;
 }
-
+/* Footer Newsletter Subscribe button */
 #footer .newsletter form a {
-  padding: 7px 10px 9px 10px;
+  padding: 7px 10px;
 }
 
 #footer .footer-bottom {
@@ -320,4 +342,53 @@ a {
 .footer-bottom p {
   text-align: center;
   color: #fff;
+}
+#boat-footer {
+  background: #333;
+  color: #fff;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 500px;
+}
+
+#boat-footer .ul-heading {
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 2rem 0 0.2rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+#boat-footer .footer-list {
+  display: grid;
+  text-align: center;
+  align-items: center;
+}
+
+#boat-footer .newsletter {
+  display: grid;
+  background: var(--dark-color);
+  grid-column: 1 / span 4;
+  padding: 2rem;
+  margin: 2rem;
+  text-align: center;
+}
+#boat-footer .newsletter form input[type='email'] {
+  height: 35px;
+  width: 60%;
+  border: none;
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+}
+
+#boat-footer .newsletter form a {
+  padding: 7px 10px 9px 10px;
+}
+
+#boat-footer .footer-bottom {
+  display: grid;
+  width: 100%;
+  background: var(--dark-color);
+  grid-column: 1 / span 4;
+  padding: 0.5rem 0;
 }
