@@ -1,5 +1,3 @@
 ## Rent-A-Yaht
 
-```python
-Simple webpage with HTML & CSS
-```
+Landing page with HTML & CSS

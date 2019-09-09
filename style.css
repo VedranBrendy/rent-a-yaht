@@ -226,13 +226,68 @@ a {
   font-size: 1.1rem;
 }
 
+/* FOOTER */
+#footer {
+  color: #fff;
+  background: var(--dark-color);
+}
+
+#footer .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+#footer .ul-heading {
+  letter-spacing: 1px;
+  font-weight: bold;
+  padding: 2rem 0 0.2rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+#footer .footer-list {
+  display: grid;
+  text-align: center;
+  margin: auto;
+}
+
+#footer .newsletter {
+  display: grid;
+  background: var(--primary-color);
+  grid-column: 1 / span 4;
+  width: 50%;
+  padding: 2rem;
+  margin: 5rem auto;
+  text-align: center;
+}
+#footer .newsletter form input[type='email'] {
+  height: 35px;
+  width: 60%;
+  border: none;
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+}
+/* Footer Newsletter Subscribe button */
+#footer .newsletter form a {
+  padding: 7px 10px;
+}
+
+#footer .footer-bottom {
+  display: grid;
+  width: 100%;
+  background: #333;
+  grid-column: 1 / span 4;
+}
+.footer-bottom p {
+  text-align: center;
+  color: #fff;
+}
+
 /* Show Boat Section */
 #boat-section {
   background: #333;
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: center;
-  grid-column-gap: 8rem;
+  grid-column-gap: 4rem;
 }
 
 #boat-section .boat-img img {
@@ -289,60 +344,6 @@ a {
 .boat-images img:hover {
   transition: all 0.5s ease-out;
 }
-/* FOOTER */
-#footer {
-  color: #fff;
-  background: var(--dark-color);
-}
-
-#footer .container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-}
-#footer .ul-heading {
-  letter-spacing: 1px;
-  font-weight: bold;
-  padding: 2rem 0 0.2rem 0;
-  text-align: center;
-  font-size: 1.2rem;
-}
-#footer .footer-list {
-  display: grid;
-  text-align: center;
-  margin: auto;
-}
-
-#footer .newsletter {
-  display: grid;
-  background: var(--primary-color);
-  grid-column: 1 / span 4;
-  width: 50%;
-  padding: 2rem;
-  margin: 5rem auto;
-  text-align: center;
-}
-#footer .newsletter form input[type='email'] {
-  height: 35px;
-  width: 60%;
-  border: none;
-  padding-left: 0.5rem;
-  font-size: 1.2rem;
-}
-/* Footer Newsletter Subscribe button */
-#footer .newsletter form a {
-  padding: 7px 10px;
-}
-
-#footer .footer-bottom {
-  display: grid;
-  width: 100%;
-  background: #333;
-  grid-column: 1 / span 4;
-}
-.footer-bottom p {
-  text-align: center;
-  color: #fff;
-}
 #boat-footer {
   background: #333;
   color: #fff;
@@ -367,6 +368,26 @@ a {
 
 #boat-footer .newsletter {
   display: grid;
+  background: var(--primary-color);
+  grid-column: 1 / span 4;
+  width: 50%;
+  padding: 2rem;
+  margin: 5rem auto;
+  text-align: center;
+}
+#boat-footer .newsletter form input[type='email'] {
+  height: 35px;
+  width: 60%;
+  border: none;
+  padding-left: 0.5rem;
+  font-size: 1.2rem;
+}
+/* Footer Newsletter Subscribe button */
+#boat-footer .newsletter a {
+  padding: 7px 10px;
+}
+/* #boat-footer .newsletter {
+  display: grid;
   background: var(--dark-color);
   grid-column: 1 / span 4;
   padding: 2rem;
@@ -383,7 +404,7 @@ a {
 
 #boat-footer .newsletter form a {
   padding: 7px 10px 9px 10px;
-}
+} */
 
 #boat-footer .footer-bottom {
   display: grid;
